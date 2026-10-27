@@ -17,7 +17,7 @@ Ctrl+Alt+O   ->  screen freezes and dims  ->  click the word  ->  clipboard
 ## Quick start
 
 ```powershell
-cd C:\Users\FosterP\Dev\nothotdog\ClickOCR
+cd ClickOCR
 powershell -ExecutionPolicy Bypass -File .\build.ps1      # builds bin\ClickOCR.exe
 .\bin\ClickOCR.exe                                        # tray icon appears
 ```
