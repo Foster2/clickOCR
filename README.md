@@ -165,3 +165,8 @@ ClickOCR/
   src/                   C# sources (C# 5, .NET Framework 4.8, WinForms + Windows.Media.Ocr)
   tests/e2e.ps1          end-to-end test against the real picker
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE). Do whatever you like with it, no attribution needed
+beyond keeping the copyright notice.
