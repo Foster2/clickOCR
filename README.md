@@ -9,8 +9,13 @@ tray app around it that answers "what does *this* word say?" instead of "OCR thi
 Ctrl+Alt+O   ->  screen freezes and dims  ->  click the word  ->  clipboard
 ```
 
+![ClickOCR: click a line, then Ctrl+click a word](docs/demo.gif)
+
+*Recorded with `--demo`: the first click copies the whole line, `Ctrl`+click copies one
+word; the panel under the sample text is the live clipboard. [Bigger MP4](docs/demo.mp4).*
+
 - Runs offline, no cloud, no account, no install, no admin rights.
-- ~55 KB single .exe, .NET Framework 4.8 + the OCR engine that ships with Windows.
+- ~57 KB single .exe, .NET Framework 4.8 + the OCR engine that ships with Windows.
 - Works on any visible text: browsers, PDFs, screenshots, images, games, videos, error dialogs.
 - Knows *where* the word is, because it uses the OCR word bounding boxes to decide what you clicked.
 
@@ -24,13 +29,17 @@ powershell -ExecutionPolicy Bypass -File .\build.ps1      # builds bin\ClickOCR.
 
 Then press **Ctrl+Alt+O**, click some text, paste.
 
+No build toolchain? Take `ClickOCR.exe` from the [latest release](../../releases/latest).
+
 Want to see it work first?
 
 ```powershell
 .\bin\ClickOCR.exe --demo
 ```
 
-A sample window opens with known text; click a word in it.
+A sample window opens: a fake invoice plus a live clipboard panel, so every click shows its
+result without pasting anywhere. It also writes the on-screen coordinates of a few words to
+`%APPDATA%\ClickOCR\demo-anchors.txt`, which is what `tests\e2e.ps1` clicks.
 
 ## Using it
 
@@ -164,6 +173,7 @@ ClickOCR/
   bin\ClickOCR.exe       the app
   src/                   C# sources (C# 5, .NET Framework 4.8, WinForms + Windows.Media.Ocr)
   tests/e2e.ps1          end-to-end test against the real picker
+  docs/demo.gif          the recording above (docs/demo.mp4 = same thing, H.264)
 ```
 
 ## License
